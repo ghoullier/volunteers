@@ -20,7 +20,7 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   // Default route
   $urlRouterProvider.otherwise('/');
   // Configure html5
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(false);
 }
 
 module.exports = RouteConfig;
