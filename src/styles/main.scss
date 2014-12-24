@@ -1,5 +1,11 @@
+@import "vendor/all";
 @import "partials/all";
 @import "modules/all";
+
+// Add your mixins here
+* {
+  box-sizing: border-box;
+}
 
 body {
   background: #D3D3D3;

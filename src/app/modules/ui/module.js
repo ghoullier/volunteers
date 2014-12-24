@@ -2,7 +2,11 @@
 
 module.exports = angular
   .module('volunteers.ui', [
+    'ng',
+
+    'ui.bootstrap',
     'ui.router',
+
     'volunteers.common',
     'volunteers.data',
     'volunteers.templates'
