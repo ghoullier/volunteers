@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-  livereloadport : 35729,
-  serverport : 5000
+  livereloadport : process.env.LIVERELOAD_PORT || 35729,
+  serverport : process.env.PORT || 5000
 };
