@@ -1,1 +1,84 @@
-<section class="View View--Register View--RegisterProfile row"></section>
+<section class="View View--Register View--RegisterProfile row">
+  <form name="form" data-ng-submit="vm.next()">
+    <fieldset>
+      <legend>Votre profil</legend>
+      <div class="form-group">
+        <label for="register-profile-email">Adresse mail*</label>
+        <input id="register-profile-email" name="email" class="form-control" type="email" required data-ng-model="vm.profile.email"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-password">Mot de passe*</label>
+        <input id="register-profile-password" name="password" class="form-control" type="password" required data-ng-model="vm.profile.password"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-lastname">Nom*</label>
+        <input id="register-profile-lastname" name="lastname" class="form-control" type="text" required data-ng-model="vm.profile.lastname"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-firstname">Prénom*</label>
+        <input id="register-profile-firstname" name="firstname" class="form-control" type="text" required data-ng-model="vm.profile.firstname"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-birthdate">Date naissance*</label>
+        <input id="register-profile-birthdate" name="birthdate" class="form-control" type="date" required data-ng-model="vm.profile.birthdate"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-birthplace">Lieu naissance*</label>
+        <input id="register-profile-birthplace" name="birthplace" class="form-control" type="text" required data-ng-model="vm.profile.birthplace"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-gender">Sexe*</label>
+        <select id="register-profile-gender" name="gender" class="form-control" type="text" required data-ng-model="vm.profile.gender" data-ng-options="vm.options.gender"></select>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-address">Adresse*</label>
+        <input id="register-profile-address" name="address" class="form-control" type="text" required data-ng-model="vm.profile.address"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-zipcode">Code postal*</label>
+        <input id="register-profile-zipcode" name="zipcode" class="form-control" type="text" required data-ng-model="vm.profile.zipcode"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-city">Ville*</label>
+        <input id="register-profile-city" name="city" class="form-control" type="text" required data-ng-model="vm.profile.city"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-country">Pays*</label>
+        <select id="register-profile-country" name="country" class="form-control" type="text" required data-ng-model="vm.profile.country" data-ng-options="vm.options.country"></select>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-homenumber">Téléphone fixe</label>
+        <input id="register-profile-homenumber" name="homenumber" class="form-control" type="text" required data-ng-model="vm.profile.homenumber"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-phonenumber">Téléphone portable*</label>
+        <input id="register-profile-phonenumber" name="phonenumber" class="form-control" type="text" required data-ng-model="vm.profile.phonenumber"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-job">Profession*</label>
+        <input id="register-profile-job" name="job" class="form-control" type="text" required data-ng-model="vm.profile.job"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-wearsize">Taille t-shirt*</label>
+        <select id="register-profile-wearsize" name="wearsize" class="form-control" type="text" required data-ng-model="vm.profile.wearsize" data-ng-options="vm.options.wearsize"></select>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-avatar">Photo*</label>
+        <input id="register-profile-avatar" name="avatar" class="form-control" type="file" required data-ng-model="vm.profile.avatar"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-emergency-contact">Personne à prévenir*</label>
+        <input id="register-profile-emergency-contact" name="emergency-contact" class="form-control" type="text" required data-ng-model="vm.profile.emergency.contact"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-emergency-phonenumber">Téléphone personne à prévenir*</label>
+        <input id="register-profile-emergency-phonenumber" name="emergency-phonenumber" class="form-control" type="text" required data-ng-model="vm.profile.emergency.phonenumber"/>
+      </div>
+      <div class="form-group">
+        <label for="register-profile-diet">Régime alimentaire*</label>
+        <input id="register-profile-diet" name="diet" class="form-control" type="text" required data-ng-model="vm.profile.diet"/>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Continuer</button>
+  </form>
+</section>

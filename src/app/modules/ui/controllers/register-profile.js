@@ -10,6 +10,11 @@ function RegisterProfile(Logger) {
 
   // ViewModel properties
   vm.profile = {};
+  vm.options = {
+    country: [],
+    gender: [],
+    wearsize: []
+  };
 
   // ViewModel methods
   vm.next = next;
