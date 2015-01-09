@@ -4,7 +4,7 @@
   <base href="<%= baseHref %>" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angular Devstack</title>
+  <title>Volunteers</title>
   <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
@@ -14,16 +14,25 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li data-ui-sref-active="active">
-              <a data-ui-sref="index()" class="Nav__Link">Index</a>
+              <a data-ui-sref="index()" class="Nav__Link">index</a>
             </li>
             <li data-ui-sref-active="active">
-              <a data-ui-sref="list()" class="Nav__Link">List</a>
+              <a data-ui-sref="list()" class="Nav__Link">list</a>
+            </li>
+            <li data-ui-sref-active="active">
+              <a data-ui-sref="login()" class="Nav__Link">login</a>
+            </li>
+            <li data-ui-sref-active="active">
+              <a data-ui-sref="register.profile()" class="Nav__Link">register.profile</a>
+            </li>
+            <li data-ui-sref-active="active">
+              <a data-ui-sref="register.skills()" class="Nav__Link">register.skills</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <main data-ui-view class="container"></main>
+    <main data-ui-view class="ViewContainer container"></main>
   </div>
   <script defer src="<%= baseHref %>js/vendor.js"></script>
   <script defer src="<%= baseHref %>js/app.js"></script>
