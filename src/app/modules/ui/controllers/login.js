@@ -29,7 +29,7 @@ function Login($alert, ApiUser, Logger) {
     Logger.log('Login::login::onLoginSuccess', user);
     $alert({
       title: 'Login',
-      content: 'Login succeed.',
+      content: 'Success',
       placement: 'top-right',
       type: 'success',
       duration: 3
@@ -40,7 +40,7 @@ function Login($alert, ApiUser, Logger) {
     Logger.log('Login::login::onLoginError', error);
     $alert({
       title: 'Login',
-      content: 'Login error.',
+      content: error.message,
       placement: 'top-right',
       type: 'danger',
       duration: 3
