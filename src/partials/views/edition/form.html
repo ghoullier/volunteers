@@ -3,6 +3,26 @@
   <form class="Form Form--Edition" role="form" name="form" data-ng-submit="vm.submit()" autocomplete="off">
     <fieldset>
       <legend>Create</legend>
+      <div class="form-group">
+        <label for="form-edition-start-at">Start At*</label>
+        <input id="form-edition-start-at" name="startAt" class="form-control" type="date" required data-ng-model="vm.model.startAt"/>
+      </div>
+      <div class="form-group">
+        <label for="form-edition-end-at">End At*</label>
+        <input id="form-edition-end-at" name="endAt" class="form-control" type="date" required data-ng-model="vm.model.endAt"/>
+      </div>
+      <div class="form-group">
+        <label for="form-edition-mounting-start-at">Mounting Start At*</label>
+        <input id="form-edition-mounting-startat" name="mountingStartAt" class="form-control" type="date" required data-ng-model="vm.model.mountingStartAt"/>
+      </div>
+      <div class="form-group">
+        <label for="form-edition-mounting-end-At">Mounting End At*</label>
+        <input id="form-edition-mounting-end-At" name="mountingEndAt" class="form-control" type="date" required data-ng-model="vm.model.mountingEndAt"/>
+      </div>
+      <div class="form-group">
+        <label for="form-edition-festival">Festival*</label>
+        <input id="form-edition-festival" name="name" class="form-control" type="text" required data-ng-model="vm.model.festival"/>
+      </div>
     </fieldset>
     <div class="btn-group" role="group">
       <button type="submit" class="btn btn-success">Submit</button>
