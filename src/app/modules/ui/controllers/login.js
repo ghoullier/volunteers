@@ -3,7 +3,7 @@
 /**
 * @ngInject
  */
-function Login(Logger) {
+function Login($alert, ApiUser, Logger) {
   Logger.debug('Login');
   // ViewModel
   var vm = this;
@@ -19,6 +19,32 @@ function Login(Logger) {
 
   function login() {
     Logger.debug('Login::login');
+    ApiUser
+      .login(vm.user)
+      .then(onLoginSuccess, onLoginError)
+    ;
+  }
+
+  function onLoginSuccess(user) {
+    Logger.log('Login::login::onLoginSuccess', user);
+    $alert({
+      title: 'Login',
+      content: 'Login succeed.',
+      placement: 'top-right',
+      type: 'success',
+      duration: 3
+    });
+  }
+
+  function onLoginError(error) {
+    Logger.log('Login::login::onLoginError', error);
+    $alert({
+      title: 'Login',
+      content: 'Login error.',
+      placement: 'top-right',
+      type: 'danger',
+      duration: 3
+    });
   }
 }
 
