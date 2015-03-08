@@ -14,7 +14,9 @@ module.exports = angular
     'volunteers.templates'
   ])
 
-  .config(require('./config/route'))
+  .config(require('./config/compiler'))
+  .config(require('./config/logger'))
+  .config(require('./config/router'))
 
   .controller('Index', require('./controllers/index'))
   .controller('List', require('./controllers/list'))
