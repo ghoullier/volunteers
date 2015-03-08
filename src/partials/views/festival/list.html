@@ -1,0 +1,10 @@
+<section class="View View--List View--Festival View--Festival--List row">
+  <h1>Festival List</h1>
+  <table class="table table-striped">
+    <tbody>
+      <tr data-ng-repeat="item in vm.list">
+        <td data-ng-repeat="(attribute, value) in item.attributes">{{value}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

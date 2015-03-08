@@ -30,7 +30,6 @@ function Login($alert, ApiUser, Logger) {
     $alert({
       title: 'Login',
       content: 'Success',
-      placement: 'top-right',
       type: 'success',
       duration: 3
     });
@@ -41,7 +40,6 @@ function Login($alert, ApiUser, Logger) {
     $alert({
       title: 'Login',
       content: error.message,
-      placement: 'top-right',
       type: 'danger',
       duration: 3
     });

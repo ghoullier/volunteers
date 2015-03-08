@@ -11,6 +11,7 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'partials/views/login/index.html',
       controller: 'Login as vm'
     })
+
     .state('register', {
       abstract: true,
       url: '/register',
@@ -22,11 +23,23 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'partials/views/register/profile.html',
       controller: 'RegisterProfile as vm'
     })
-    // .state('register.skills', {
-    //   url: '/competences',
-    //   templateUrl: 'partials/views/register/skills.html',
-    //   controller: 'RegisterSkills as vm'
-    // })
+
+    .state('festival', {
+      abstract: true,
+      url: '/festival',
+      templateUrl: 'partials/views/festival/_layout.html',
+      controller: 'Festival as vm'
+    })
+    .state('festival.form', {
+      url: '/form',
+      templateUrl: 'partials/views/festival/form.html',
+      controller: 'FestivalForm as vm'
+    })
+    .state('festival.list', {
+      url: '/list',
+      templateUrl: 'partials/views/festival/list.html',
+      controller: 'FestivalList as vm'
+    })
   ;
   // Default route
   $urlRouterProvider.otherwise('/login');

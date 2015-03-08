@@ -3,8 +3,10 @@
 /**
  * @ngInject
  */
-function ApiUser($q, Parse, Logger) {
+function ApiUser($q, Api, Parse, Logger) {
   var User = Parse.User;
+  var onResponse = Api.getResponseHandler('ApiUser');
+
   return {
     login: login,
     sign: sign
@@ -14,7 +16,7 @@ function ApiUser($q, Parse, Logger) {
     Logger.log('ApiUser::login');
 
     return $q(function defered(resolve, reject) {
-      User.logIn(model.username, model.password, onApiResponse('login', resolve, reject));
+      User.logIn(model.username, model.password, onResponse('login', resolve, reject));
     });
   }
 
@@ -28,23 +30,8 @@ function ApiUser($q, Parse, Logger) {
         user.set(key, value);
       });
 
-      user.signUp(null, onApiResponse('sign', resolve, reject));
+      user.signUp(null, onResponse('sign', resolve, reject));
     });
-  }
-
-  function onApiResponse(method, resolve, reject) {
-    return {
-      success: function(user) {
-        Logger.log(['ApiUser', method, 'success'].join('::'), user);
-
-        resolve(user);
-      },
-      error: function(user, error) {
-        Logger.log(['ApiUser', method, 'error'].join('::'), user, error);
-
-        reject(error);
-      }
-    };
   }
 }
 

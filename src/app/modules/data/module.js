@@ -15,7 +15,7 @@ module.exports = angular
 
   .constant('Parse', Parse)
 
+  .factory('Api', require('./services/api'))
+  .factory('ApiFestival', require('./services/festival'))
   .factory('ApiUser', require('./services/user'))
-
-  .factory('Faker', require('./services/faker'))
 ;

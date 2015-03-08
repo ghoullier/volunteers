@@ -18,8 +18,13 @@ module.exports = angular
   .config(require('./config/logger'))
   .config(require('./config/router'))
 
-  .controller('Login', require('./controllers/login'))
-  .controller('Register', require('./controllers/register'))
-  .controller('RegisterProfile', require('./controllers/register-profile'))
-  .controller('RegisterSkills', require('./controllers/register-skills'))
+  .controller('Login', require('./controllers/login/index'))
+
+  .controller('Register', require('./controllers/register/index'))
+  .controller('RegisterProfile', require('./controllers/register/profile'))
+  .controller('RegisterSkills', require('./controllers/register/skills'))
+
+  .controller('Festival', require('./controllers/festival/index'))
+  .controller('FestivalList', require('./controllers/festival/list'))
+  .controller('FestivalForm', require('./controllers/festival/form'))
 ;

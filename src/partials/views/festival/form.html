@@ -1,0 +1,27 @@
+<section class="View View--Form View--Festival View--Festival--Form row">
+  <h1>Festival Form</h1>
+  <form class="Form Form--Festival" role="form" name="form" data-ng-submit="vm.submit()" autocomplete="off">
+    <fieldset>
+      <legend>Create</legend>
+      <div class="form-group">
+        <label for="form-festival-name">Name*</label>
+        <input id="form-festival-name" name="name" class="form-control" type="text" required data-ng-model="vm.model.name"/>
+      </div>
+      <div class="form-group">
+        <label for="form-festival-email">Email*</label>
+        <input id="form-festival-email" name="email" class="form-control" type="text" required data-ng-model="vm.model.email"/>
+      </div>
+      <div class="form-group">
+        <label for="form-festival-description">Description*</label>
+        <input id="form-festival-description" name="description" class="form-control" type="text" required data-ng-model="vm.model.description"/>
+      </div>
+      <div class="form-group">
+        <label for="form-festival-website">Website*</label>
+        <input id="form-festival-website" name="website" class="form-control" type="text" required data-ng-model="vm.model.website"/>
+      </div>
+    </fieldset>
+    <div class="btn-group" role="group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</section>
