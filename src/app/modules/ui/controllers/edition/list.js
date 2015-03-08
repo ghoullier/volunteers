@@ -3,8 +3,8 @@
 /**
  * @ngInject()
  */
-function FestivalList(Logger, list) {
-  Logger.log('FestivalList', list);
+function EditionList(Logger, list) {
+  Logger.log('EditionList', list);
 
   // ViewModel
   var vm = this;
@@ -14,4 +14,4 @@ function FestivalList(Logger, list) {
   vm.errors = {};
 }
 
-module.exports = FestivalList;
+module.exports = EditionList;

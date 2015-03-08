@@ -17,7 +17,9 @@ function Api($q, Parse, Logger) {
     return {
       create: create,
       get: get,
-      getList: getList
+      getList: getList,
+      getApiName: getApiName,
+      getEntityName: getEntityName
     };
 
     function create(model) {
@@ -46,6 +48,14 @@ function Api($q, Parse, Logger) {
       log('getList');
 
       return find('getList', {});
+    }
+
+    function getApiName() {
+      return apiName;
+    }
+
+    function getEntityName() {
+      return entityName;
     }
 
     function find(method, parameters) {

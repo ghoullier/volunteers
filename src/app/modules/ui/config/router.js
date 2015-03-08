@@ -43,6 +43,26 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         list: FestivalListResolver
       }
     })
+
+    .state('edition', {
+      abstract: true,
+      url: '/edition',
+      templateUrl: 'partials/views/edition/_layout.html',
+      controller: 'Edition as vm'
+    })
+    .state('edition.form', {
+      url: '/form/:id',
+      templateUrl: 'partials/views/edition/form.html',
+      controller: 'EditionForm as vm'
+    })
+    .state('edition.list', {
+      url: '/list',
+      templateUrl: 'partials/views/edition/list.html',
+      controller: 'EditionList as vm',
+      resolve: {
+        list: EditionListResolver
+      }
+    })
   ;
   // Default route
   $urlRouterProvider.otherwise('/login');
@@ -51,6 +71,13 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 }
 
 module.exports = RouteConfig;
+
+/**
+ * @ngInject()
+ */
+function EditionListResolver(ApiEdition) {
+  return ApiEdition.getList();
+}
 
 /**
  * @ngInject()

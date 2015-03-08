@@ -18,6 +18,8 @@ module.exports = angular
   .config(require('./config/logger'))
   .config(require('./config/router'))
 
+  .factory('EntityForm', require('./services/entity-form'))
+
   .controller('Login', require('./controllers/login/index'))
 
   .controller('Register', require('./controllers/register/index'))
@@ -27,4 +29,8 @@ module.exports = angular
   .controller('Festival', require('./controllers/festival/index'))
   .controller('FestivalList', require('./controllers/festival/list'))
   .controller('FestivalForm', require('./controllers/festival/form'))
+
+  .controller('Edition', require('./controllers/edition/index'))
+  .controller('EditionList', require('./controllers/edition/list'))
+  .controller('EditionForm', require('./controllers/edition/form'))
 ;
