@@ -1,0 +1,20 @@
+<section class="View View--Register View--RegisterSkills row">
+  <form name="form" data-ng-submit="vm.next()">
+    <fieldset>
+      <legend>Vos compétences</legend>
+      <div class="form-group">
+        <label for="register-skills-certificate">Diplômes de secourisme</label>
+        <input id="register-skills-certificate" name="certificate" class="form-control" type="text" required data-ng-model="vm.skills.certificate"/>
+      </div>
+      <div class="form-group">
+        <label for="register-skills-languages">Langues</label>
+        <input id="register-skills-languages" name="languages" class="form-control" type="text" required data-ng-model="vm.skills.languages"/>
+      </div>
+      <div class="form-group">
+        <label for="register-skills-driver-licences">Permis de conduire</label>
+        <input id="register-skills-driver-licences" name="driver-licences" class="form-control" type="text" required data-ng-model="vm.skills.driverlicences"/>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Continuer</button>
+  </form>
+</section>

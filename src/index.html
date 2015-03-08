@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html data-ng-app="volunteers.ui" data-ng-strict-di>
-<head>
-  <base href="<%= baseHref %>" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angular Devstack</title>
-  <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
-  <div class="Wrapper">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li data-ui-sref-active="active">
-              <a data-ui-sref="index()" class="Nav__Link">Index</a>
-            </li>
-            <li data-ui-sref-active="active">
-              <a data-ui-sref="list()" class="Nav__Link">List</a>
-            </li>
-          </ul>
+  <head>
+    <base href="<%= BASE_HREF %>" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>volunteers</title>
+    <link rel="stylesheet" href="<%= BASE_HREF %>css/main.css?v=<%= APP_VERSION %>" />
+  </head>
+  <body>
+    <div class="Wrapper">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li data-ui-sref-active="active">
+                <a data-ui-sref="index()" class="Nav__Link">index</a>
+              </li>
+              <li data-ui-sref-active="active">
+                <a data-ui-sref="list()" class="Nav__Link">list</a>
+              </li>
+              <li data-ui-sref-active="active">
+                <a data-ui-sref="login()" class="Nav__Link">login</a>
+              </li>
+              <li data-ui-sref-active="active">
+                <a data-ui-sref="register.profile()" class="Nav__Link">register.profile</a>
+              </li>
+              <li data-ui-sref-active="active">
+                <a data-ui-sref="register.skills()" class="Nav__Link">register.skills</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    <main data-ui-view class="container"></main>
-  </div>
-  <script defer src="<%= baseHref %>js/vendor.js"></script>
-  <script defer src="<%= baseHref %>js/app.js"></script>
-</body>
+      </nav>
+      <main data-ui-view class="ViewContainer container"></main>
+    </div>
+    <script src="<%= BASE_HREF %>js/vendor.js?v=<%= APP_VERSION %>"></script>
+    <script src="<%= BASE_HREF %>js/app.js?v=<%= APP_VERSION %>"></script>
+    <script src="<%= BASE_HREF %>js/config.js?v=<%= APP_VERSION %>"></script>
+  </body>
 </html>

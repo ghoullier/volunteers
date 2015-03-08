@@ -1,11 +1,15 @@
 'use strict';
 
+var pkg = require('../../../../package');
+
 module.exports = angular
   .module('volunteers.common', [
     'ng'
   ])
 
-  .constant('AppConfig', require('../../config'))
+  .constant('AppVersion', pkg.version)
+  .constant('EventsEmitter', require('./services/events-emitter'))
 
-  .factory('Logger', require('./services/logger'))
+  .provider('Logger', require('./services/logger'))
+
 ;
