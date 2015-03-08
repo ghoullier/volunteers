@@ -3,8 +3,8 @@
 /**
  * @ngInject()
  */
-function FestivalForm($alert, ApiFestival, Logger) {
-  Logger.log('FestivalForm');
+function FestivalForm($alert, $stateParams, ApiFestival, Logger) {
+  Logger.log('FestivalForm', $stateParams);
   // ViewModel
   var vm = this;
 

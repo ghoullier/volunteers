@@ -31,14 +31,17 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'Festival as vm'
     })
     .state('festival.form', {
-      url: '/form',
+      url: '/form/:id',
       templateUrl: 'partials/views/festival/form.html',
       controller: 'FestivalForm as vm'
     })
     .state('festival.list', {
       url: '/list',
       templateUrl: 'partials/views/festival/list.html',
-      controller: 'FestivalList as vm'
+      controller: 'FestivalList as vm',
+      resolve: {
+        list: FestivalListResolver
+      }
     })
   ;
   // Default route
@@ -48,3 +51,10 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 }
 
 module.exports = RouteConfig;
+
+/**
+ * @ngInject()
+ */
+function FestivalListResolver(ApiFestival) {
+  return ApiFestival.getList();
+}

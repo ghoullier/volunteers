@@ -11,8 +11,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr data-ng-repeat="item in vm.list">
-        <td>{{item.id}}</td>
+      <tr data-ng-repeat="item in ::vm.list">
+        <td>
+          <a data-ui-sref="festival.form({id: item.id})">{{item.id}}</a>
+        </td>
         <td data-ng-repeat="(attribute, value) in item.attributes">{{value}}</td>
       </tr>
     </tbody>
