@@ -1,8 +1,18 @@
 <section class="View View--List View--Festival View--Festival--List row">
   <h1>Festival List</h1>
   <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Description</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>WebSite</th>
+      </tr>
+    </thead>
     <tbody>
       <tr data-ng-repeat="item in vm.list">
+        <td>{{item.id}}</td>
         <td data-ng-repeat="(attribute, value) in item.attributes">{{value}}</td>
       </tr>
     </tbody>
