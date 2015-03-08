@@ -1,6 +1,6 @@
 'use strict';
 
-var Parse = require('parse');
+var Parse = window.Parse;
 
 var APPLICATION = require('./parse.keys');
 
@@ -14,6 +14,8 @@ module.exports = angular
   ])
 
   .constant('Parse', Parse)
+
+  .factory('ApiUser', require('./services/user'))
 
   .factory('Faker', require('./services/faker'))
 ;

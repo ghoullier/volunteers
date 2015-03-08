@@ -3,17 +3,30 @@
 /**
  * @ngInject
  */
-function RegisterProfile(Logger) {
+function RegisterProfile(ApiUser, Logger) {
   Logger.debug('RegisterProfile');
   // ViewModel
   var vm = this;
 
   // ViewModel properties
-  vm.profile = {};
+  vm.profile = {
+    country: 'france',
+    gender: 'male',
+    wearsize: 'm'
+  };
   vm.options = {
-    country: [],
-    gender: [],
-    wearsize: []
+    country: [{
+      label: 'France',
+      value: 'france'
+    }],
+    gender: [{
+      label: 'Homme',
+      value: 'male'
+    }],
+    wearsize: [{
+      label: 'M',
+      value: 'm'
+    }]
   };
 
   // ViewModel methods
@@ -23,6 +36,15 @@ function RegisterProfile(Logger) {
 
   function next() {
     Logger.debug('RegisterProfile::next');
+
+    ApiUser
+      .sign(vm.profile)
+      .then(function onSignSuccess(user) {
+        Logger.log('RegisterProfile::next::onSignSuccess', user);
+      }, function onSignError(error) {
+        Logger.log('RegisterProfile::next::onSignError', error);
+      })
+    ;
   }
 }
 

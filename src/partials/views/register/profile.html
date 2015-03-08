@@ -3,6 +3,10 @@
     <fieldset>
       <legend>Votre profil</legend>
       <div class="form-group">
+        <label for="register-profile-username">Username*</label>
+        <input id="register-profile-username" name="username" class="form-control" type="text" required data-ng-model="vm.profile.username"/>
+      </div>
+      <div class="form-group">
         <label for="register-profile-email">Adresse mail*</label>
         <input id="register-profile-email" name="email" class="form-control" type="email" required data-ng-model="vm.profile.email"/>
       </div>
@@ -28,7 +32,7 @@
       </div>
       <div class="form-group">
         <label for="register-profile-gender">Sexe*</label>
-        <select id="register-profile-gender" name="gender" class="form-control" type="text" required data-ng-model="vm.profile.gender" data-ng-options="vm.options.gender"></select>
+        <select id="register-profile-gender" name="gender" class="form-control" type="text" required data-ng-model="vm.profile.gender" data-ng-options="gender.value as gender.label for gender in ::vm.options.gender"></select>
       </div>
       <div class="form-group">
         <label for="register-profile-address">Adresse*</label>
@@ -44,7 +48,7 @@
       </div>
       <div class="form-group">
         <label for="register-profile-country">Pays*</label>
-        <select id="register-profile-country" name="country" class="form-control" type="text" required data-ng-model="vm.profile.country" data-ng-options="vm.options.country"></select>
+        <select id="register-profile-country" name="country" class="form-control" type="text" required data-ng-model="vm.profile.country" data-ng-options="country.value as country.label for country in ::vm.options.country"></select>
       </div>
       <div class="form-group">
         <label for="register-profile-homenumber">Téléphone fixe</label>
@@ -60,7 +64,7 @@
       </div>
       <div class="form-group">
         <label for="register-profile-wearsize">Taille t-shirt*</label>
-        <select id="register-profile-wearsize" name="wearsize" class="form-control" type="text" required data-ng-model="vm.profile.wearsize" data-ng-options="vm.options.wearsize"></select>
+        <select id="register-profile-wearsize" name="wearsize" class="form-control" type="text" required data-ng-model="vm.profile.wearsize" data-ng-options="wearsize.value as wearsize.label for wearsize in ::vm.options.wearsize"></select>
       </div>
       <div class="form-group">
         <label for="register-profile-avatar">Photo*</label>
