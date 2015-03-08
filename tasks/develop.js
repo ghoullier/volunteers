@@ -1,26 +1,29 @@
 'use strict';
 
-var util = require('gulp-util');
+var browserSync = require('browser-sync');
+var fs = require('fs');
+var url = require('url');
 
-var config = require('./server/config');
+var paths = require('./utils/paths');
 
 module.exports = function() {
-  var http = require('./server/http');
-  var lr = require('./server/live-reload');
-
-  http.once('error', function onError(error) {
-    if ('EADDRINUSE' === error.code) {
-      util.log(util.colors.red('HTTP Server NOT started: port ' + config.serverport + ' is already used'));
-      // End process
-      process.exit(0);
+  browserSync({
+    server: {
+      baseDir: paths.dist.root,
+      middleware: pushStateMiddleware
     }
   });
-  http.once('listening', function onListening() {
-    // Notify server is running
-    util.log('HTTP Server is running on: ' + util.colors.magenta('http://localhost:' + config.serverport));
-    // Start live reload
-    lr.listen(config.livereloadport);
-  })
-  // Start webserver
-  http.listen(config.serverport);
 };
+
+/**
+ * Middelware that support pushState
+ */
+function pushStateMiddleware(request, response, next) {
+  var pathname = paths.dist.root + url.parse(request.url).pathname;
+  fs.exists(pathname, function onExists(exists) {
+    if (!exists) {
+      request.url = '/index.html';
+    }
+    return next();
+  });
+}
