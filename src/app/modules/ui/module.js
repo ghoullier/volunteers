@@ -18,8 +18,6 @@ module.exports = angular
   .config(require('./config/logger'))
   .config(require('./config/router'))
 
-  .controller('Index', require('./controllers/index'))
-  .controller('List', require('./controllers/list'))
   .controller('Login', require('./controllers/login'))
   .controller('Register', require('./controllers/register'))
   .controller('RegisterProfile', require('./controllers/register-profile'))

@@ -6,16 +6,6 @@
 function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   // Declare routes
   $stateProvider
-    .state('index', {
-      url: '/',
-      templateUrl: 'partials/views/index.html',
-      controller: 'Index as vm'
-    })
-    .state('list', {
-      url: '/list',
-      templateUrl: 'partials/views/list.html',
-      controller: 'List as vm'
-    })
     .state('login', {
       url: '/login',
       templateUrl: 'partials/views/login/index.html',
@@ -32,14 +22,14 @@ function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'partials/views/register/profile.html',
       controller: 'RegisterProfile as vm'
     })
-    .state('register.skills', {
-      url: '/competences',
-      templateUrl: 'partials/views/register/skills.html',
-      controller: 'RegisterSkills as vm'
-    })
+    // .state('register.skills', {
+    //   url: '/competences',
+    //   templateUrl: 'partials/views/register/skills.html',
+    //   controller: 'RegisterSkills as vm'
+    // })
   ;
   // Default route
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/login');
   // Configure html5
   $locationProvider.html5Mode(false);
 }

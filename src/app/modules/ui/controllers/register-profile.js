@@ -30,19 +30,19 @@ function RegisterProfile(ApiUser, Logger) {
   };
 
   // ViewModel methods
-  vm.next = next;
+  vm.submit = submit;
 
   // Implementation
 
-  function next() {
-    Logger.debug('RegisterProfile::next');
+  function submit() {
+    Logger.debug('RegisterProfile::submit');
 
     ApiUser
       .sign(vm.profile)
       .then(function onSignSuccess(user) {
-        Logger.log('RegisterProfile::next::onSignSuccess', user);
+        Logger.log('RegisterProfile::submit::onSignSuccess', user);
       }, function onSignError(error) {
-        Logger.log('RegisterProfile::next::onSignError', error);
+        Logger.log('RegisterProfile::submit::onSignError', error);
       })
     ;
   }
