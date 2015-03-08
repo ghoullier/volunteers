@@ -5,7 +5,7 @@
  */
 function ApiUser($q, Api, Parse, Logger) {
   var User = Parse.User;
-  var onResponse = Api.getResponseHandler('ApiUser');
+  var interceptor = Api.getResponseInterceptor('ApiUser');
 
   return {
     login: login,
@@ -16,7 +16,7 @@ function ApiUser($q, Api, Parse, Logger) {
     Logger.log('ApiUser::login');
 
     return $q(function defered(resolve, reject) {
-      User.logIn(model.username, model.password, onResponse('login', resolve, reject));
+      User.logIn(model.username, model.password, interceptor('login', resolve, reject));
     });
   }
 
@@ -30,7 +30,7 @@ function ApiUser($q, Api, Parse, Logger) {
         user.set(key, value);
       });
 
-      user.signUp(null, onResponse('sign', resolve, reject));
+      user.signUp(null, interceptor('sign', resolve, reject));
     });
   }
 }
